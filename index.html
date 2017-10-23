@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js demo-1">
+	<head> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+		<title>Flipboard</title>
+		<link rel="stylesheet" type="text/css" href="css/bookblock.css" />
+		<script src="js/modernizr.custom.js"></script>
+        
+        <style>
+            #header{
+                min-height: 100px;
+                margin-top: 2%;
+                background-color: lightgray;
+            }
+            #menu{
+                min-height: 40px;
+                background-color: lightblue;
+            }
+            #body{
+                min-height: 400px;
+                background-color: white;
+            }
+            #footer{
+                min-height: 100px;
+                background-color: lightgray;
+            }
+        </style>
+            
+            
+        </style>
+        
+        
+	</head>
+    
+	<body>
+		<div class="container">
+			
+			<div class="main clearfix">
+				<div class="bb-custom-wrapper">
+					<div id="bb-bookblock" class="bb-bookblock">
+						<div class="bb-item">
+							<a><img src="gate.jpg" alt="image01"/></a>
+						</div>
+						<div class="bb-item">
+							<a><img src="water.jpg" alt="image02"/></a>
+						</div>
+						<div class="bb-item">
+							<a><img src="prism.jpg" alt="image03"/></a>
+						</div>
+						<div class="bb-item">
+							<a><img src="rose1.jpg" alt="image04"/></a>
+						</div>
+						<div class="bb-item">
+							<a><img src="ty.jpg" alt="image05"/></a>
+						</div>
+					</div>
+					<nav style="text-align:center;">
+                        <a id="bb-nav-prev" href="#" class="bb-custom-icon bb-custom-icon-arrow-left">
+                            <button type="button"> Backwards </button>  </a> 
+                        <a id="bb-nav-next" href="#" class="bb-custom-icon bb-custom-icon-arrow-right">
+                            <button type="button">  Forwards </button> </a>
+					</nav>
+               </div>
+			</div>
+		</div><!-- /container -->
+        
+        
+        
+        
+        <div id="header">
+            <br><center><h3>Flipboard</h3>The future of Magazines!</center><br>
+        </div>
+        <div id="menu">
+        </div>
+        <div id="body">
+            <center><h3>Introduction</h3></center>
+            <center>Flipboard is a news aggregation and social network aggregation company based in Palo Alto, California, with offices in New York, Vancouver and Bejiing. Its software, also known as Flipboard, was first released in July 2010. It aggregates content from social media, news feeds, photo sharing sites and other websites, presents it in magazine format, and allows users to "flip" through the articles, images and videos being shared. Readers can also save stories into Flipboard magazines. As of March 2016 the company claims there have been 28 million magazines created by users on Flipboard.[citation needed] The service can be accessed via web browser, or by a Flipboard application for Microsoft Windows and macOS, and via mobile apps for iOS, Android and Windows Phone (discontinued August 30, 2017). The client software is available at no charge and is localized in 21 languages. Its current headquarters is located at 735 Emerson St, Palo Alto, CA 94301, recently moving from a nearby building.</center><br>
+            <center><p><h3> Reception </h3>         
+The reaction to the application was mainly positive, with Techpad calling it a "killer" iPad application. Apple reviewed Flipboard positively, and named the application Apple's "iPad App of the Year" in 2010. When a new update of the software added more features such as support for Google Reader, a web-based aggregator, and content from more publishers, the app received a favorable review from the Houston Chronicle
+            </p></center><br>
+            <center><p><h3>User interface</h3>
+              The application's user interface is designed for intuitive flipping through content. Once the feeds have been set up, the first page seen when the application is opened is a list of the subscribed content. The iPhone and Android versions have a "Cover Stories" section on the first page collating only the most recent, important items from all of the subscriptions. This is meant to be read when the user only has a short period of time for reading  
+            </p></center>
+            
+        </div>
+        
+        <div id="footer">
+            
+        </div>
+        
+        
+        
+        
+        
+        
+        
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+		<script src="js/jquery.bookblock.js"></script>
+		<script>
+			var Page = (function() {
+				
+				var config = {
+						$bookBlock : $( '#bb-bookblock' ),
+						$navNext : $( '#bb-nav-next' ),
+						$navPrev : $( '#bb-nav-prev' )
+					},
+					init = function() {
+						config.$bookBlock.bookblock( {
+							speed : 800,
+							shadowSides : 0.8,
+							shadowFlip : 0.7
+						} );
+						initEvents();
+					},
+					initEvents = function() {
+						
+						var $slides = config.$bookBlock.children();
+
+						// add navigation events
+						config.$navNext.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'next' );
+							return false;
+						} );
+
+						config.$navPrev.on( 'click touchstart', function() {
+							config.$bookBlock.bookblock( 'prev' );
+							return false;
+						} );
+					
+					};
+
+					return { init : init };
+			})();
+		</script>
+		<script>
+				Page.init();
+		</script>
+        
+        
+	</body>
+</html>
